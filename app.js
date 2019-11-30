@@ -21,7 +21,7 @@ const hostname = '127.0.0.1';
 const port = 3000;
 
 // mongoose.connect("mongodb://localhost/yelp_camp", {useNewUrlParser: true});
-
+// mongoose.connect("mongodb+srv://gamsam:Pillar96@yelpcamp-qg8ze.mongodb.net/test?retryWrites=true&w=majority", {useNewUrlParser: true});
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://gamsam:Pillar96@yelpcamp-qg8ze.mongodb.net/test?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true });
@@ -30,6 +30,7 @@ client.connect(err => {
     // perform actions on the collection object
     client.close();
 });
+module.exports = mongoose;
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
